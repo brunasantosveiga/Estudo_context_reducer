@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { SignUp } from "./pages/SignUp";
+import { ShowData } from "./pages/ShowData";
+import { ContextProvider } from "./contexts/context";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ContextProvider>
+      <BrowserRouter>
+        <h1>titulo da página</h1>
+        <hr />
+        <Routes>
+          <Route path="/" element={<SignUp />} />
+          <Route path="/exibir" element={<ShowData />} />
+        </Routes>
+      </BrowserRouter>
+    </ContextProvider>
   );
 }
-
+/* toda a aplicação esta dentro do ContextProvider, ou seja, o contexto vai estar disponivel em toda a 
+aplicação. Aqui basta importar o ContextProvider. */
 export default App;
