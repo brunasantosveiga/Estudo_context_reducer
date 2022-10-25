@@ -12,7 +12,8 @@ export const SignUp = () => {
         name: e.target.value,
       },
     });
-  };
+  }; //Função que passa o dispatch
+
   const handleAgeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch({
       type: "CHANGE_AGE",
@@ -20,11 +21,11 @@ export const SignUp = () => {
         age: parseInt(e.target.value),
       },
     });
-  };
+  }; //Função que passa o dispatch
 
   return (
     <div>
-      <h3>Tela SignUp</h3>
+      <h3>Tela de cadastro:</h3>
       <br />
       <input
         type="text"
@@ -33,12 +34,15 @@ export const SignUp = () => {
         onChange={handleNameChange}
       />
       <input
-        type="text"
+        type="number"
         placeholder="Digite uma idade"
-        value={state.user.age}
+        value={state.user.age === 0 ? "" : state.user.age}
         onChange={handleAgeChange}
       />
-      <Link to="/exibir">Ir para ShowData</Link>
+      <br />
+      <Link style={{ backgroundColor: "#fff" }} to="/exibir">
+        Mostrar dados cadastrados
+      </Link>
     </div>
   );
 };

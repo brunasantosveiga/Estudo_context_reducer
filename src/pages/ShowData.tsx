@@ -17,7 +17,9 @@ export const ShowData = () => {
       {!state.user.name && "Não há informações para exibir."}
 
       <br />
-      <Link to="/">Voltar para SignUp</Link>
+      <Link style={{ backgroundColor: "#fff" }} to="/">
+        Voltar para Tela de cadastro
+      </Link>
     </div>
   );
 };

@@ -15,10 +15,12 @@ export const userReducer = (state: UserType, action: reducerActionType) => {
   switch (action.type) {
     case "CHANGE_NAME":
       return { ...state, name: action.payload.name };
-    //Quando o type for CHANGE_NAME eu retorno uma cópia do state atual, mudando o name para o que está no payload
+    //Qndo o type for CHANGE_NAME eu retorno uma cópia do state atual, mudando o name para o que está no payload
     case "CHANGE_AGE":
       return { ...state, age: action.payload.age };
   }
 
   return state;
 };
+
+// estrutura do reducer: const [state, dispatch] = useReducer(reducer, initialState);
