@@ -26,19 +26,16 @@ export const SignUp = () => {
   return (
     <div>
       <h3>Tela de cadastro:</h3>
+      <span>Nome: </span>
+      <input type="text" value={state.user.name} onChange={handleNameChange} />
       <br />
-      <input
-        type="text"
-        placeholder="Digite um nome"
-        value={state.user.name}
-        onChange={handleNameChange}
-      />
+      <span>Idade: </span>
       <input
         type="number"
-        placeholder="Digite uma idade"
         value={state.user.age === 0 ? "" : state.user.age}
         onChange={handleAgeChange}
       />
+      <br />
       <br />
       <Link style={{ backgroundColor: "#fff" }} to="/exibir">
         Mostrar dados cadastrados

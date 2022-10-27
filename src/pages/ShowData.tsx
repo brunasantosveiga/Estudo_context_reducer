@@ -6,16 +6,17 @@ export const ShowData = () => {
   const { state, dispatch } = useContext(Context);
   return (
     <div>
-      <h3>Tela ShowData</h3>
-      {state.user.name && (
+      {state.user.name && state.user.age !== 0 && (
         <>
-          Meu nome é: {state.user.name}
+          Meu nome é {state.user.name}.
           <br />
           Eu tenho {state.user.age} anos.
+          <br />
         </>
       )}
-      {!state.user.name && "Não há informações para exibir."}
-
+      {!state.user.name && state.user.age === 0 && (
+        <p>Não há informações para exibir.</p>
+      )}
       <br />
       <Link style={{ backgroundColor: "#fff" }} to="/">
         Voltar para Tela de cadastro

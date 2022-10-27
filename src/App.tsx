@@ -39,8 +39,8 @@ function App() {
               : state.theme.darkColors.color,
         }}
       >
-        <h1>Título da página</h1>
-        <p>Tema: {state.theme.status}</p>
+        <h1>Estudo de ContextAPI com reducer</h1>
+        <span>Tema: {state.theme.status} </span>
         <button onClick={handleSwitchTheme}>Mudar Tema</button>
         <hr />
         <Routes>
